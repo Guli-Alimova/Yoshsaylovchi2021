@@ -1,0 +1,35 @@
+// Global style
+
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+
+}
+
+*{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+
+input{
+    outline:none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+    font-size:22px;
+    color:#4D5053;
+    background-color:#F5F5F5; ;
+}
+@for $i from 1 through 15 {
+    .line-clamp-#{$i} {
+      display: -webkit-box;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
