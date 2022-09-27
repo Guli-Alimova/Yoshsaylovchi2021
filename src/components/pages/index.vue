@@ -3,8 +3,8 @@
     <Header/>  
   <Intro/>
 </div>
-
   <About/>
+  <Video/>
 </template>
 
 
@@ -12,12 +12,14 @@
 import Header from "../block/Header.vue"
 import Intro from "../block/Intro.vue"
 import About from "../block/About.vue"
-
+import Video from "../block/Video.vue"
 export default {
   components:{
     Header,
     Intro,
-    About
+    About,
+    Video
+    
 
   }
 }
