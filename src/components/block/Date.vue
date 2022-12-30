@@ -1,11 +1,11 @@
 <template>
-    <div class="flex justify-between w-[70%] my-0 mx-auto rounded-[12px] border-[1px] bg-[#fff] py-[20px] absolute left-[175px] bottom-[-83px]">
+    <div class="flex justify-between w-[70%] my-0 mx-auto rounded-[12px] border-[1px] bg-[#fff] py-[20px] absolute left-[175px] bottom-[-83px] shadow-lg">
         <div>
-            <p class="py-[12px] px-[30px] bg-[#0083ff] font-bold text-[#fff] uppercase rounded-tl-[12px] rounded-tr-[22px] rounded-br-[22px] inline absolute bottom-[155px]">Bugun, {{currentDate()}}</p>
+            <p class="py-[12px] px-[30px] bg-[#0083ff] font-bold text-[#fff] uppercase rounded-tl-[12px] rounded-tr-[22px] rounded-br-[22px] inline absolute bottom-[136px] left-[-1]">Bugun, {{currentDate()}}</p>
         </div>
         <div class="border-r-[1px] px-[28px] w-[50%] mt-[28px]">
             <p class="font-medium text-[16px] mb-[8px] text-[#2d2c3d]">Prezident saylovigacha qolgan vaqt</p>
-            <div class="flex justify-between" >
+            <div v-if ="!expired" class="flex justify-between" >
                 <span>
                     <p class="text-center text-[33px] font-bold">{{displayDays}}</p>
                     <p class="text-[18px] text-[rgba(13,33,68,.3137254901960784)]">kun</p>
@@ -26,6 +26,9 @@
                     <p class="text-[18px] text-[rgba(13,33,68,.3137254901960784)]">soniya</p>
                 </span>
         
+            </div>
+            <div v-else>
+              <h3 class="text-[18px] font-bold text-[#2d2c3d] uppercase leading-[23px]">Saylov boshlandi</h3>
             </div>
         </div>
         <div class="px-[28px] w-[50%] mt-[28px]">
@@ -51,7 +54,8 @@ export default {
         displayDays:0,
         displayHours:0,
         displayMinutes:0,
-        displaySeconds:0
+        displaySeconds:0,
+        expired:false
     }),
     computed:{
       _seconds:() => 1000,
@@ -62,7 +66,7 @@ export default {
         return this._minutes * 60;
       },
       _days(){
-        return this._hours * 24;
+        return this._hours * 12;
       },
       end(){
         return new Date(
@@ -86,11 +90,12 @@ export default {
     showRemaining(){
      const timer = setInterval(() => {
         const now = new Date()
-        // const end = new Date(2022, 9, 22, 10, 10, 10, 10 )
-        const distance = this.end.getTime() - now.getTime()
+        const end = new Date("December 31, 2022 00:00:00")
+        const distance = end.getTime() - now.getTime()
 
         if (distance < 0){
             clearInterval(timer)
+            this.expired=true
             return;
         }
 
@@ -111,7 +116,7 @@ export default {
       const current = new Date();
      const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-      const date = `${current.getDate()}/${current.getMonth(month)+1}`;
+      const date = `${current.getDate()}/${current.getMonth(month)+ 1}`;
       
       return date;
     },
