@@ -68,7 +68,7 @@
                                 <span class="text-[#a1a1a1] text-sm ">{{item.date}}</span>
                                 <span class="text-white text-sm px-[6px] py-[2px] bg-[hsla(0,0%,100%,.2)]">{{item.time}}</span>
                             </div>
-                            <h2 class="font-medium text-[14px] leading-[20px] text-white line-clamp-2">{{item.name}}</h2>
+                            <h2 class="font-medium text-[14px] leading-[20px] text-white videoTheme">{{item.name}}</h2>
                         </div>
                     </div>
                 </li> 
@@ -247,6 +247,14 @@ export default {
     visibility: hidden;
     display: none;
 }
-
+.videoTheme{
+    display: block;
+  display: -webkit-box;
+  /* height: 45px; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 </style>

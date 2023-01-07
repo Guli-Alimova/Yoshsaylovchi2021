@@ -5,7 +5,8 @@
 </div>
   <About/>
   <Video/>
-  <pdf-fayl/>
+  <tab-new/>
+  <election-regester/>
 </template>
 
 
@@ -14,7 +15,8 @@ import Header from "../block/Header.vue"
 import Intro from "../block/Intro.vue"
 import About from "../block/About.vue"
 import Video from "../block/Video.vue"
-import PdfFayl from "../block/PdfFayl.vue"
+import TabNew from "../block/TabNew.vue"
+import ElectionRegester from "../block/ElectionRegester.vue"
 
 export default {
   components:{
@@ -22,9 +24,9 @@ export default {
     Intro,
     About,
     Video,
-    PdfFayl
+    TabNew,
+    ElectionRegester
     
-
   }
 }
 </script>
@@ -35,5 +37,6 @@ export default {
     background-image: url(../../assets/img/introBg.32b3c0cc.png);
     background-repeat: no-repeat;
 }
+
 
 </style>
