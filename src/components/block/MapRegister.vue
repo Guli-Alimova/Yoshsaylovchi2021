@@ -11,15 +11,16 @@
 
         <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Tug'ilgan kun</label>
         <input type="text" placeholder="dd.mm.yyyy" class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[8px]">
-        <div class="relative  py-[14px] rounded-[8px] text-[14px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[24px] text-center">
-            <!-- <button class="p-[10px] bg-[#132543] absolute top-0 left-0 rounded-l-xl h-[100%] border-none"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmln="https://www.w3.org/2000/svg">/n<path d="M13.125 17.625L18.75 12L13.125 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n<path d="M5.25 17.625L10.875 12L5.25 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n</svg></button>
+        <div class="relative rounded-[8px] text-[14px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[24px] text-center">
+            <!-- <button class="p-[10px] bg-[#132543] rounded-l-xl h-[100%] border-none"></button>
             O'ngga suring -->
              <swipeButton text="O'ngga suring"
                  shake-animation="true"
                  :color="getButtonColor"
                  @submit="actionMethod"
+                 class="rounded-[8px] mt-0"
             
-                  /> 
+                  /> <svg class="absolute left-[15px] top-[11px] " width="24" height="24" viewBox="0 0 24 24" fill="none" xmln="https://www.w3.org/2000/svg">/n<path d="M13.125 17.625L18.75 12L13.125 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n<path d="M5.25 17.625L10.875 12L5.25 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n</svg>
         </div>
         <button class=" w-[100%] p-[12px] text-[16px] leading-[20px] text-white rounded-[8px] border-none cursor-pointer mt-[24px] bg-[hsla(0,0%,100%,.4)]">Saylov uchastkasini izlash</button>
 
