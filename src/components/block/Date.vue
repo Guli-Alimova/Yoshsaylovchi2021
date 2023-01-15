@@ -90,7 +90,7 @@ export default {
     showRemaining(){
      const timer = setInterval(() => {
         const now = new Date()
-        const end = new Date("December 31, 2022 00:00:00")
+        const end = new Date("January 13, 2023 19:32:05")
         const distance = end.getTime() - now.getTime()
 
         if (distance < 0){
