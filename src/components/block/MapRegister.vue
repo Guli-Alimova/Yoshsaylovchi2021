@@ -6,7 +6,7 @@
         <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Pasport seriya va raqamingizni kiriting</label>
         <div class="flex justify-between gap-[12px] mt-[8px] mb-[20px]">
             <input type="text" placeholder="AA" class="p-[9px] w-[48px] uppercase rounded-[8px] text-[16px] leading-[20px] text-[#93a3be] bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border">
-            <input type="number" placeholder="1234567" class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border">
+            <input type="text" placeholder="1234567" class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border">
         </div>
 
         <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Tug'ilgan kun</label>
