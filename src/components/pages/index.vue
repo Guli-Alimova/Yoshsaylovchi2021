@@ -1,6 +1,6 @@
 <template>
 <div class="intro">
-    <Header/>  
+    <Header :pages="pages"/>  
   <Intro/>
 </div>
   <About/>
@@ -10,7 +10,7 @@
   <hero-map/>
   <statistic/>  
   <app-store/>
-  <footer />
+  <Footer :pages="pages"/>
 </template>
 
 
@@ -41,6 +41,28 @@ export default {
     
   },
 
+  data() {
+        return {
+            pages: [{
+                    link: 'Loyiha haqida',
+                    href: "loyiha haqida"
+                },
+                {
+                    link: "O'quv bazasi",
+                    href: "o'quv bazasi"
+                },
+                {
+                    link: 'Saylov uchastkasi',
+                    href: "saylov uchastkasi"
+                },
+                {
+                    link: 'yosh saylovchi',
+                    href: "yosh saylovchi"
+                },
+
+            ]
+        }
+    },
 }
 </script>
 

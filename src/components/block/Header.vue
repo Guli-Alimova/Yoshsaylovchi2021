@@ -109,28 +109,9 @@
 
 
 export default {
-    data() {
-        return {
-            pages: [{
-                    link: 'Loyiha haqida',
-                    href: "loyiha haqida"
-                },
-                {
-                    link: "O'quv bazasi",
-                    href: "o'quv bazasi"
-                },
-                {
-                    link: 'Saylov uchastkasi',
-                    href: "saylov uchastkasi"
-                },
-                {
-                    link: 'yosh saylovchi',
-                    href: "yosh saylovchi"
-                },
-
-            ]
-        }
-    },
+  name:"Pages",
+  props:['pages']
+  
    
 }
 </script>
