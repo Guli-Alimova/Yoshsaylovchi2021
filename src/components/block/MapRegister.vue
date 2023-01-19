@@ -2,26 +2,39 @@
 <div class="w-[380px]  m-[20px]">
     <h3 class="font-bold text-[18px] leading-[22px] text-center uppercase text-white py-[32px] bg-[#061734] rounded-t-xl">Saylov uchastkamni aniqlash</h3>
 
-    <form action="" class="p-[32px] bg-[#0d2144] rounded-b-xl">
-        <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Pasport seriya va raqamingizni kiriting</label>
+    <form action="" 
+    @submit.prevent 
+    class="p-[32px] bg-[#0d2144] rounded-b-xl">
+        <label for="pasport" class="text-[16px] leading-[20px] text-white opacity-[.75]">Pasport seriya va raqamingizni kiriting</label>
         <div class="flex justify-between gap-[12px] mt-[8px] mb-[20px]">
-            <input type="text" placeholder="AA" class="p-[9px] w-[48px] uppercase rounded-[8px] text-[16px] leading-[20px] text-[#93a3be] bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border">
-            <input type="text" placeholder="1234567" class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border">
+            <Input type="text"
+             placeholder="AA"
+            v-model="name"
+             required
+             class="p-[9px] w-[48px] uppercase rounded-[8px] text-[16px] leading-[20px] text-[#93a3be] bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border"/>{{pasport}}
+            <Input 
+            type="text" 
+            placeholder="1234567" 
+            v-model="number"
+            class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border"/>
         </div>
 
         <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Tug'ilgan kun</label>
-        <input type="text" placeholder="dd.mm.yyyy" class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[8px]">
-        <div class="relative rounded-[8px] text-[14px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[24px] text-center">
-            <!-- <button class="p-[10px] bg-[#132543] rounded-l-xl h-[100%] border-none"></button>
-            O'ngga suring -->
-             <swipeButton text="O'ngga suring"
-                 shake-animation="true"
-                 :color="getButtonColor"
-                 @submit="actionMethod"
-                 class="rounded-[8px] mt-0"
+        <input 
+        type="text"
+        placeholder="dd.mm.yyyy"
+        v-model="date"
+        class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[8px]">
+        
+        <div  class=" btn relative rounded-[8px] text-[14px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[24px] text-center py-[14px] w-[100%] transition ">
+                O'nga suring
+            <button type="submit"   class="rounded-[8px] absolute left-0 top-0 p-[10px] bg-[#132543] h-[100%]">
+                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmln="https://www.w3.org/2000/svg"><path d="M13.125 17.625L18.75 12L13.125 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.25 17.625L10.875 12L5.25 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> 
+            </button>
             
-                  /> <svg class="absolute left-[15px] top-[11px] " width="24" height="24" viewBox="0 0 24 24" fill="none" xmln="https://www.w3.org/2000/svg">/n<path d="M13.125 17.625L18.75 12L13.125 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n<path d="M5.25 17.625L10.875 12L5.25 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>/n</svg>
         </div>
+
+   
         <button class=" w-[100%] p-[12px] text-[16px] leading-[20px] text-white rounded-[8px] border-none cursor-pointer mt-[24px] bg-[hsla(0,0%,100%,.4)]">Saylov uchastkasini izlash</button>
 
         <div class="flex justify-betweenv gap-[16px] mt-[24px]">
@@ -46,22 +59,53 @@
 
 <script>
 
-import { ref, computed } from 'vue';
-import swipeButton from 'vue3-swipe-button';
-import 'vue3-swipe-button/dist/swipeButton.css';
+import Input from "../block/Input.vue"
 
 export default {
-  components: { swipeButton },
-
-  setup() {
-    const show = ref(false);
-    
-    const getButtonColor = computed(() => show.value ? 'green' : '#132543');
-    
-    const actionMethod = () => show.value = !show.value;
-
-    return { actionMethod, getButtonColor };
-  },
+    components:{
+        Input
+    },
+    data(){
+        return{
+            form:{
+                pasport:'',
+                numbers:'',
+                data:'',
+                
+            },
+           
+          
+        }
+        
+    },
+ 
 }
 </script>
 
+<style scoped>
+
+.btn:hover{
+    padding-left:0;
+    padding-right:40px;
+    color:rgba(255,255,255,1)
+}
+.btn span{
+    transition: 0.5s ease-in-out;
+}
+.btn:hover span{
+    left:calc(100% - 45px)
+}
+/* .btn:after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+    background:  rgba(255, 255, 255,0.25);
+    transform: translateX(-200px) skewX(30deg);
+    transition: 1.20s ease-in-out;
+} */
+/* .btn:hover:after{
+    transform: translateX(170px) skew(30deg);
+} */
+</style>

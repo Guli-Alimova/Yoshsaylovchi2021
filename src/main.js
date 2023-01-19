@@ -8,6 +8,7 @@ import { createI18n } from 'vue-i18n'
 import VueLottiePlayer from "vue-lottie-player";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 const app = createApp(App)
 const i18n = createI18n({
    
