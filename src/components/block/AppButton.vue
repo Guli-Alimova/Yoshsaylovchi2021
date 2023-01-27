@@ -7,7 +7,7 @@
             <p class="text-[9px] text-white text-center">{{item.text}}</p>
        
         </div>
-        <img :src="item.hover" class="opacity-0 w-[120px] h-[120px] absolute top-[-68px]  p-[8px] rounded-[6px] bg-[rgba(13,33,68,.7019607843137254)]" alt="">
+        <img :src="item.hover" class="opacity-0 w-[120px] h-[120px] absolute top-[-68px] p-[8px] rounded-[6px] bg-[rgba(13,33,68,.7019607843137254)]" alt="">
         </a>
         
         

@@ -10,10 +10,9 @@
             <Input type="text"
              placeholder="AA"
             v-model="name"
-             required
              class="p-[9px] w-[48px] uppercase rounded-[8px] text-[16px] leading-[20px] text-[#93a3be] bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border"/>{{pasport}}
             <Input 
-            type="text" 
+            type="" 
             placeholder="1234567" 
             v-model="number"
             class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border"/>
@@ -21,14 +20,14 @@
 
         <label for="" class="text-[16px] leading-[20px] text-white opacity-[.75]">Tug'ilgan kun</label>
         <input 
-        type="text"
+        type="date"
         placeholder="dd.mm.yyyy"
         v-model="date"
         class="w-[100%] p-[9px] rounded-[8px] text-[16px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[8px]">
         
         <div  class=" btn relative rounded-[8px] text-[14px] leading-[20px] text-[#93a3be]  bg-[hsla(0,0%,100%,.1)] border-[hsla(0,0%,100%,.2) border mt-[24px] text-center py-[14px] w-[100%] transition ">
                 O'nga suring
-            <button type="submit"   class="rounded-[8px] absolute left-0 top-0 p-[10px] bg-[#132543] h-[100%]">
+            <button @click.prevent="addPerson" type="submit"   class="rounded-[8px] absolute left-0 top-0 p-[10px] bg-[#132543] h-[100%]">
                 <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmln="https://www.w3.org/2000/svg"><path d="M13.125 17.625L18.75 12L13.125 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.25 17.625L10.875 12L5.25 6.375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> 
             </button>
             
@@ -60,25 +59,44 @@
 <script>
 
 import Input from "../block/Input.vue"
+import { useVuelidate } from '@vuelidate/core'
+import { required } from '@vuelidate/validators'
+import { minLength } from '@vuelidate/validators'
 
 export default {
     components:{
         Input
     },
-    data(){
-        return{
-            form:{
-                pasport:'',
-                numbers:'',
-                data:'',
-                
-            },
-           
-          
-        }
-        
+      setup () {
+    return { v$: useVuelidate() }
     },
- 
+      data(){
+        return{
+                name: '',
+                number:'',
+                date:'',
+        }
+     
+    },
+    validations () {
+    return {
+      name: { required, minLength:minLength(2) }, 
+      number: { required }, 
+      date: {required},
+      people:[]
+      
+    } 
+    },
+
+     methods: {
+    addPerson () {
+      this.people.push({
+        name: '',
+        number: '',
+        date: ''
+      })
+    }
+     }
 }
 </script>
 

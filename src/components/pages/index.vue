@@ -71,6 +71,8 @@ export default {
 .intro {
     background-image: url(../../assets/img/introBg.32b3c0cc.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
