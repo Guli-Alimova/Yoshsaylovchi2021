@@ -3,7 +3,7 @@
     <h3 class="font-bold text-[18px] leading-[22px] text-center uppercase text-white py-[32px] bg-[#061734] rounded-t-xl">Saylov uchastkamni aniqlash</h3>
 
     <form action="" 
-    @submit.prevent 
+    @submit.prevent = "submit"
     class="p-[32px] bg-[#0d2144] rounded-b-xl">
         <label for="pasport" class="text-[16px] leading-[20px] text-white opacity-[.75]">Pasport seriya va raqamingizni kiriting</label>
         <div class="flex justify-between gap-[12px] mt-[8px] mb-[20px]">
