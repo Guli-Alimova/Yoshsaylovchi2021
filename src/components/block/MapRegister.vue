@@ -63,6 +63,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { minLength } from '@vuelidate/validators'
 
+
 export default {
     components:{
         Input
@@ -83,18 +84,19 @@ export default {
       name: { required, minLength:minLength(2) }, 
       number: { required }, 
       date: {required},
-      people:[]
+    
       
     } 
     },
 
      methods: {
     addPerson () {
-      this.people.push({
-        name: '',
-        number: '',
-        date: ''
-      })
+        console.log(this.name)
+    //   this.people.push({
+    //     name: '',
+    //     number: '',
+    //     date: ''
+    //   })
     }
      }
 }
